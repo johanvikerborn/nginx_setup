@@ -1,0 +1,12 @@
+---
+# tasks file for repository
+
+- name: Add NGINX repository to server dnf
+  yum_repository:
+      name: nginx
+      description: Nginx Repository
+      file: nginx.repo
+      baseurl: http://nginx.org/packages/centos/$releasever/$basearch/
+      gpgcheck: yes
+      gpgkey: https://nginx.org/keys/nginx_signing.key
+      enabled: yes
